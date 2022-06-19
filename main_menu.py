@@ -1,4 +1,4 @@
-# главное мен
+# главное меню
 from os_func import *
 from account  import *
 from victory import *
