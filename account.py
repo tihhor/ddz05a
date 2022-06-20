@@ -1,4 +1,4 @@
-# пополнение баланса  счета
+# пополнение баланса счета
 def acc_increase(acc_balance):
     acc_balance += int(input('Введите сумму пополнения: '))
     return(acc_balance)
