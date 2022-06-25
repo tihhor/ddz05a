@@ -7,24 +7,19 @@
 Ремарк 1898
 Леонардо ДаВинчи  1452
 """
-def victory():
+
+def victory(victory_dict = {'Пушкина': 1799,
+            'Эйнштейна': 1879,
+            'Толстого': 1828,
+            'Ремарка': 1898,
+            'Леонардо ДаВинчи': 1452}):
 
     while True:
         right_answers = 0
-        if input('Год рождения Пушкина? ') == '1799':
-            right_answers += 1
-
-        if input('Год рождения Эйншейна? ') == '1879':
-            right_answers += 1
-
-        if input('Год рождения Толстого? ') == '1828':
-            right_answers += 1
-
-        if input('Год рождения Ремарка? ') == '1898':
-            right_answers += 1
-
-        if input('Год рождения Леонардо ДаВинчи? ') == '1452':
-            right_answers += 1
+        for name, year in victory_dict.items():
+            print('Год рождения '+name+'?')
+            if check_answer(input(), str(year)):
+                right_answers += 1
 
         print('Правильных ответов:', right_answers)
         print('Количество неправильных ответов:', 5-right_answers)
@@ -36,3 +31,5 @@ def victory():
 
     print('Игра окончена!')
 
+def check_answer(in_ans, right_ans):
+    return(in_ans == right_ans)

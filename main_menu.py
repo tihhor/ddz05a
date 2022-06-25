@@ -17,6 +17,13 @@ menu_list = [
     '11. смена директории (*необязательный пункт);',
     '12. выход.',
 ]
+
+vic_dict = {'Пушкина': 1799,
+            'Эйнштейна': 1879,
+            'Толстого': 1828,
+            'Ремарка': 1898,
+            'Леонардо ДаВинчи': 1452}
+
 import os
 choice = 0
 start_dir = os.getcwd()
@@ -49,6 +56,7 @@ while choice != '12':
         print('Создатель программы: Е.Трофимов')
         print('*' * 35)
     elif choice == '9':
+        # victory(vic_dict)
         victory()
     elif choice == '10':
         account()
