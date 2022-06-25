@@ -38,6 +38,8 @@ def show_curr_dir():
     print('Рабочая директория:')
     for i in os.listdir(path="."):
         print('    ', i)
+    if input('Сохранить в файл? Д/Н ') in 'YyДд':
+        save_dir()
 
 def show_dir():
     print('Папки в рабочей директорий:')
@@ -62,3 +64,21 @@ def change_dir(start_dir):
     elif os.path.isdir(new_dir):
         os.chdir(new_dir)
     print('Новая текущая директория ', os.getcwd())
+
+# сохранение текущей директории в файл
+def save_dir():
+    f = open('listdir.txt', 'w')
+
+# Файлы в рабочей директорий
+    f.write('Files: ')
+    for i in os.listdir(path="."):
+        if os.path.isfile(i):
+            f.write(str(i) + ',')
+
+    f.write('\nDirs: ')
+# Папки в рабочей директорий
+    for i in os.listdir(path="."):
+        if os.path.isdir(i):
+            f.write(str(i)+',')
+
+    f.close()
