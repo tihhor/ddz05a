@@ -2,6 +2,7 @@
 from os_func import *
 from account  import *
 from victory import *
+from account import add_stars
 
 menu_list = [
     '1. создать папку;',
@@ -24,6 +25,7 @@ vic_dict = {'Пушкина': 1799,
             'Ремарка': 1898,
             'Леонардо ДаВинчи': 1452}
 
+
 import os
 choice = 0
 start_dir = os.getcwd()
@@ -33,6 +35,10 @@ def print_menu():
     print('Выберите пункт меню:')
     for i in menu_list:
         print(i)
+
+@add_stars
+def author():
+    print('Создатель программы: Е.Трофимов')
 
 while choice != '12':
     print_menu()
@@ -52,11 +58,8 @@ while choice != '12':
     elif choice == '7':
         print(os.name)
     elif choice == '8':
-        print('*' * 35)
-        print('Создатель программы: Е.Трофимов')
-        print('*' * 35)
+        author()
     elif choice == '9':
-        # victory(vic_dict)
         victory()
     elif choice == '10':
         account()
