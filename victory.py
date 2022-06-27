@@ -8,6 +8,9 @@
 Леонардо ДаВинчи  1452
 """
 
+from account import add_stars
+# используем декоратор из списка покупок
+@add_stars
 def victory(victory_dict = {'Пушкина': 1799,
             'Эйнштейна': 1879,
             'Толстого': 1828,
@@ -18,9 +21,8 @@ def victory(victory_dict = {'Пушкина': 1799,
         right_answers = 0
         for name, year in victory_dict.items():
             print('Год рождения '+name+'?')
-            if check_answer(input(), str(year)):
-                right_answers += 1
-
+# тернарный оператор
+            right_answers += 1 if check_answer(input(), str(year)) else 0
         print('Правильных ответов:', right_answers)
         print('Количество неправильных ответов:', 5-right_answers)
         print('Процент правильных ответов:', right_answers/5*100)
